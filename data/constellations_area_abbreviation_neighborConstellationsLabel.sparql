@@ -1,9 +1,10 @@
 # Список созвездий с их свойствами
 # List of constellations with their properties
-SELECT ?constellation ?constellationLabel ?area ?abbreviation ?neighborConstellations WHERE {
+SELECT ?constellation ?constellationLabel ?area ?abbreviation ?neighborConstellationsLabel WHERE {
   ?constellation wdt:P31 wd:Q8928.   # экземпляры созвездия
   OPTIONAL { ?constellation wdt:P2046 ?area. }   # площадь созвездия
   OPTIONAL { ?constellation wdt:P1813 ?abbreviation. }   # сокращение созвездия
   OPTIONAL { ?constellation wdt:P47 ?neighborConstellations. }   # соседние созвездия
   SERVICE wikibase:label { bd:serviceParam wikibase:language "ru,en". }
 }
+
